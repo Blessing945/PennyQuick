@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <style>
+        /* your styles go here */
+
+        body{
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        .form-container{
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0.1);
+        }
+
+        .form-group{
+            margin-bottom: 15px;
+        }
+
+        .form-group label{
+            font-size: 1em;
+            display: block;
+        }
+
+
+        .form-group input{
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .cta-button{
+            background-color: rgba(29, 103, 5, 0.646);
+            color: white;
+            padding: 12px;
+            width: 100%;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+
+        }
+
+        .cta-button:hover{
+            background-color: #006bb3;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="form-container">
+        <h2>Create an Account</h2>
+        <form id="signuo-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="text" id="password" required>
+            </div>
+
+            <button  type="submit" class="cta-button">Sign Up</button>
+        </form>
+
+        <p id="signup-message" style="color: red;"></p>
+    </div>
+
+    <script>
+
+        const form = document.getElementById('signup-form');
+        const signupMessage = document.getElementById('signup-message');
+
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if(localStorage.getItem(username)){
+                signupMessage.textContent = "Username already taken. Please enter a different one";
+                return;
+            }
+
+            localStorage.setItem(username, password);
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

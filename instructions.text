@@ -1,0 +1,37 @@
+-----------------------------------LOGIN PAGE-------------------------------
+
+    TYPE OF ACCOUNTS: 
+        Users
+        Admin
+
+
+
+    
+--------------------------------CREATE AN ACCOUNT PAGE-----------------------------
+
+    only the users/customers need to create accounts, as for the admins they will be added into the 
+    database by the current admin/company.
+
+
+
+
+
+------------------------------ADMIN FUNCTIONALITIES----------------------------
+
+    Edit products/information to the store
+        Add
+        Delete
+        Edit information
+
+    Delete a user/customer account from the database
+
+    Message
+        Send a message to the user to notify them about their appointments
+        A day before and an hour before the appointments
+
+        Also send them an email/message for them to confirm if the appoint will hold or would like to
+        cancel the appointment...The appointment will ONLY be able to be cancelled 3hours before with no payment required
+        else if the appointment was cancelled after 3hours, the user will be required to deposit 40% of the money.
+    
+    
+
